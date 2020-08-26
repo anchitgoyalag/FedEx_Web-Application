@@ -1,0 +1,39 @@
+<table id="cumulative">
+        <tr >
+          <th>Job Category</th>
+          <th>Description</th> 
+          <th>Threshold</th>
+          <th>Status</th>
+        </tr>
+        <tr routerLink = "/third" [ngStyle]="signal1=='YELLOW'?{'background-color':'yellow'} : signal1=='GREEN'?{'background-color':'#27db3f'}:signal1=='RED'?{'background-color':'#ff3b3b'}: {'background-color': 'white'}">
+          <td>OPF Scan</td>
+          <td>First/Last Physical Scans</td> 
+          <td>1000 (Recs)</td>
+          <td>{{signal1}}</td>
+        </tr>
+    
+      </table>
+      
+      <br><br>
+                  
+                 
+                  <table id="users">
+                      <tr>
+                          <th *ngFor="let col of columns">
+                              {{col}}
+                          </th>
+                      </tr>
+                      <tr *ngFor="let graphbook of snapbook">
+                            <ng-container *ngFor="let col of index">
+                        <td *ngIf ="graphbook.type == 'OPFSCAN'">
+                          {{graphbook[col]}}
+                        </td>
+                    </ng-container>
+                      </tr>
+                    
+                    </table>
+      
+                    <br>
+                    <a href="javascript:void(0)" (click)="goBack()">
+                            Back
+                          </a>

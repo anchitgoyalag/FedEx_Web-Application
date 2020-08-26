@@ -1,0 +1,49 @@
+<table id="cumulative">
+    <tr >
+      <th>Job Category</th>
+      <th>Description</th> 
+      <th>Threshold</th>
+      <th>Status</th>
+    </tr>
+    <tr routerLink = "/first">
+      <td>ISSC Prep</td>
+      <td>ISSC Prep</td> 
+      <td>10 (Time)</td>
+      <td [ngStyle]="signal1=='YELLOW'?{'background-color':'yellow'} : signal1=='GREEN'?{'background-color':'#27db3f'}:signal1=='RED'?{'background-color':'#ff3b3b'}: {'background-color': 'white'}">{{signal1}} </td>
+    </tr>
+    <tr routerLink = "/second">
+      <td>OPF Prep</td>
+      <td>OPF Prep</td> 
+      <td>10 (Time)</td>
+      <td [ngStyle]="signal2=='YELLOW'?{'background-color':'yellow'} : signal2=='GREEN'?{'background-color':'#27db3f'}:signal2=='RED'?{'background-color':'#ff3b3b'}: {'background-color': 'white'}">{{signal2}}</td>
+    </tr>
+    <tr routerLink = "/third">
+      <td>OPF Scan</td>
+      <td>First/Last Physical Scans</td> 
+      <td>1000 (Recs)</td>
+      <td [ngStyle]="signal3=='YELLOW'?{'background-color':'yellow'} : signal3=='GREEN'?{'background-color':'#27db3f'}:signal3=='RED'?{'background-color':'#ff3b3b'}: {'background-color': 'white'}">{{signal3}}</td>
+    </tr>
+
+  </table>
+
+<br><br>
+            
+
+          
+
+             
+<table id="users">
+    <tr>
+        <th *ngFor="let col of columns">
+            {{col}}
+        </th>
+    </tr>
+    <tr *ngFor="let graphbook of snapbook">
+          
+      <td *ngFor="let col of index">
+        {{graphbook[col]}}
+      </td>
+  
+    </tr>
+  
+  </table>

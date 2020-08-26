@@ -1,0 +1,38 @@
+<!----<div>
+    <div style="display: block">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+      </canvas>
+    </div>
+  </div>
+-->
+<div class="chart-diplayh">
+    <div style="width: 100%; margin: auto">
+      <canvas id="bar"></canvas>
+   
+      <br><br>
+    
+  <div style="margin-left: auto">
+    From:
+    <select [(ngModel)]="from" style="width: 200px;height: 30px;">
+   <option *ngFor="let m of monthL" [value]='m.value'>{{m.month1}}</option>
+    </select>
+  &nbsp;&nbsp;
+  To:
+  <select [(ngModel)]="toMonth" style="width: 200px;height: 30px;">
+   <option *ngFor="let m1 of monthL" [value]='m1.value'>{{m1.month1}}</option>
+  </select> 
+  </div>
+  <br>
+  <button class="button" (click)="applyDateFilter()"><b>APPLY FILTER</b></button>
+    
+      
+  </div>
+
+
+
+  
